@@ -20,7 +20,11 @@ def main():
     wordd = words[value]
 # ask user for word:
     for i in range(6):
-        word.append(input("5 letter word: ").strip().upper())
+        while 1:
+            word.append(input("5 letter word: ").strip().upper())
+            if len(word[i]) == 5:
+                break
+            word.pop()
         check(word, i, wordd)
     print(f"The word is '{wordd.lower()}'.")
 
